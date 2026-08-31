@@ -1,474 +1,619 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>XAT3LMAG8Ca | Ahmed Mohamed</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#020303;
-    color:#d8ffd8;
-    font-family:"Courier New",monospace;
-    overflow-x:hidden;
-}
-
-#matrix{
-    position:fixed;
-    inset:0;
-    z-index:-2;
-    opacity:.14;
-}
-
-body:after{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    background:repeating-linear-gradient(
-        0deg,
-        rgba(0,255,100,.025),
-        rgba(0,255,100,.025) 1px,
-        transparent 1px,
-        transparent 4px
-    );
-    z-index:50;
-}
-
-/* NAVBAR */
-
-nav{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding:18px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,.82);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(0,255,100,.18);
-    z-index:20;
-}
-
-.logo{
-    color:#00ff66;
-    font-size:21px;
-    font-weight:bold;
-    text-shadow:0 0 15px #00ff66;
-}
-
-nav a{
-    color:#888;
-    text-decoration:none;
-    margin-left:20px;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#00ff66;
-    text-shadow:0 0 12px #00ff66;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:120px 20px 70px;
-}
-
-.hero-content{
-    max-width:900px;
-}
-
-.profile{
-    width:210px;
-    height:210px;
-    object-fit:cover;
-    border-radius:50%;
-    border:3px solid #00ff66;
-    padding:6px;
-    box-shadow:
-        0 0 15px #00ff66,
-        0 0 45px rgba(0,255,100,.35);
-    animation:pulse 2.5s infinite;
-    margin-bottom:30px;
-}
-
-@keyframes pulse{
-    0%,100%{
-        box-shadow:
-        0 0 15px #00ff66,
-        0 0 35px rgba(0,255,100,.25);
-    }
-
-    50%{
-        box-shadow:
-        0 0 30px #00ff66,
-        0 0 70px rgba(0,255,100,.45);
-    }
-}
-
-.terminal{
-    color:#00ff66;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(38px,8vw,90px);
-    color:#fff;
-    letter-spacing:4px;
-    text-shadow:
-        0 0 10px #00ff66,
-        0 0 35px rgba(0,255,100,.45);
-}
-
-.codename{
-    margin-top:15px;
-    font-size:clamp(22px,4vw,38px);
-    color:#00ff66;
-    letter-spacing:7px;
-    text-shadow:0 0 15px #00ff66;
-}
-
-.typing{
-    margin-top:25px;
-    color:#888;
-    font-size:17px;
-}
-
-.cursor{
-    color:#00ff66;
-    animation:blink .7s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:0;
-    }
-}
-
-.status{
-    display:inline-block;
-    margin-top:30px;
-    padding:10px 18px;
-    border:1px solid #00ff66;
-    color:#00ff66;
-    box-shadow:0 0 20px rgba(0,255,100,.15);
-}
-
-/* SECTIONS */
-
-section{
-    padding:100px 8%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-title{
-    color:#00ff66;
-    font-size:30px;
-    margin-bottom:35px;
-    text-shadow:0 0 12px rgba(0,255,100,.5);
-}
-
-.section-title:before{
-    content:"> ";
-    color:#fff;
-}
-
-/* ABOUT */
-
-.about-box{
-    padding:30px;
-    background:rgba(0,255,100,.025);
-    border:1px solid rgba(0,255,100,.25);
-    box-shadow:0 0 30px rgba(0,255,100,.04);
-}
-
-.about-box p{
-    color:#aaa;
-    line-height:2;
-    font-size:17px;
-}
-
-.highlight{
-    color:#00ff66;
-}
-
-/* SKILLS */
-
-.skills{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(180px,1fr));
-    gap:15px;
-}
-
-.skill{
-    padding:22px;
-    border:1px solid #123d23;
-    background:rgba(0,255,100,.025);
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:translateY(-6px);
-    border-color:#00ff66;
-    box-shadow:0 0 25px rgba(0,255,100,.2);
-}
-
-.skill span{
-    color:#00ff66;
-}
-
-/* PROJECTS */
-
-.projects{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.project{
-    padding:25px;
-    border:1px solid #143d25;
-    background:rgba(0,0,0,.65);
-    transition:.3s;
-}
-
-.project:hover{
-    transform:translateY(-5px);
-    border-color:#00ff66;
-    box-shadow:0 0 25px rgba(0,255,100,.15);
-}
-
-.project h3{
-    color:#00ff66;
-    margin-bottom:15px;
-}
-
-.project p{
-    color:#888;
-    line-height:1.8;
-}
-
-/* CONTACT */
-
-.contact{
-    text-align:center;
-}
-
-.contact p{
-    color:#888;
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.btn{
-    padding:14px 25px;
-    border:1px solid #00ff66;
-    color:#00ff66;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#00ff66;
-    color:#000;
-    box-shadow:0 0 25px #00ff66;
-}
-
-.social-title{
-    margin-top:60px;
-    margin-bottom:20px;
-    color:#777;
-}
-
-.social-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.social{
-    padding:12px 20px;
-    border:1px solid #244;
-    color:#aaa;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.social:hover{
-    color:#00ff66;
-    border-color:#00ff66;
-    box-shadow:0 0 15px rgba(0,255,100,.2);
-}
-
-/* FOOTER */
-
-footer{
-    text-align:center;
-    padding:45px 20px;
-    border-top:1px solid #123d23;
-    color:#555;
-}
-
-footer strong{
-    color:#00ff66;
-}
-
-/* MOBILE */
-
-@media(max-width:700px){
-
-    nav{
-        padding:15px 5%;
-    }
-
-    nav .links{
-        display:none;
-    }
-
-    .hero h1{
-        letter-spacing:2px;
-    }
-
-    .codename{
-        letter-spacing:3px;
-    }
-
-    .profile{
-        width:165px;
-        height:165px;
-    }
-
-    section{
-        padding:80px 5%;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>X-MEN | Men's Fashion</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --yellow: #ffc400;
+            --black: #050505;
+            --white: #ffffff;
+            --gray: #111111;
+            --light-gray: #999999;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: Arial, Tahoma, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 75px;
+            padding: 0 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(5,5,5,.95);
+            border-bottom: 2px solid var(--yellow);
+        }
+
+        .nav-logo {
+            font-size: 28px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 3px;
+        }
+
+        .nav-logo span {
+            color: var(--yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--yellow);
+        }
+
+        .whatsapp-nav {
+            background: var(--yellow);
+            color: #000;
+            padding: 11px 18px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                radial-gradient(circle at center, #222 0%, #050505 65%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--yellow);
+            opacity: .08;
+            filter: blur(100px);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-logo {
+            width: min(600px, 90vw);
+            max-height: 300px;
+            object-fit: contain;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 25px rgba(255,196,0,.25));
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            font-weight: 1000;
+            font-style: italic;
+            letter-spacing: 5px;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            color: #ccc;
+            font-size: 20px;
+            margin: 15px 0 30px;
+        }
+
+        .shop-btn {
+            display: inline-block;
+            background: var(--yellow);
+            color: #000;
+            padding: 16px 35px;
+            font-size: 18px;
+            font-weight: 900;
+            border-radius: 3px;
+            transition: .3s;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255,196,0,.25);
+        }
+
+        /* SECTION */
+
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 900;
+            font-style: italic;
+        }
+
+        .section-title span {
+            color: var(--yellow);
+        }
+
+        .section-title p {
+            color: var(--light-gray);
+            margin-top: 10px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product {
+            background: var(--gray);
+            border: 1px solid #222;
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            border-color: var(--yellow);
+        }
+
+        .product-image {
+            height: 330px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #181818;
+            color: #555;
+            font-size: 18px;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: var(--yellow);
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            padding: 12px;
+            border: 1px solid var(--yellow);
+            color: var(--yellow);
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .order-btn:hover {
+            background: var(--yellow);
+            color: #000;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #0c0c0c;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #bbb;
+            font-size: 19px;
+            line-height: 2;
+        }
+
+        .about-content strong {
+            color: var(--yellow);
+        }
+
+        /* CATEGORIES */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .category {
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #111;
+            border: 1px solid #292929;
+            font-size: 30px;
+            font-weight: 900;
+            font-style: italic;
+            transition: .3s;
+        }
+
+        .category:hover {
+            background: var(--yellow);
+            color: #000;
+            transform: scale(1.02);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: var(--yellow);
+            color: #000;
+        }
+
+        .contact h2 {
+            font-size: 45px;
+            font-weight: 1000;
+            font-style: italic;
+        }
+
+        .contact p {
+            margin: 15px 0 25px;
+            font-size: 18px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 15px 30px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: .3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 35px 20px;
+            color: #777;
+        }
+
+        footer strong {
+            color: var(--yellow);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .whatsapp-nav {
+                padding: 9px 12px;
+                font-size: 13px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 580px;
+            }
+
+            .hero-logo {
+                max-height: 220px;
+            }
+
+            .section-title h2 {
+                font-size: 34px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-<canvas id="matrix"></canvas>
 
 <!-- NAVBAR -->
 
 <nav>
 
-    <div class="logo">
-        XAT3LMAG8Ca
+    <div class="nav-logo">
+        X<span>-</span>MEN
     </div>
 
-    <div class="links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+    <div class="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#products">المنتجات</a>
+        <a href="#categories">الأقسام</a>
+        <a href="#about">عن X-MEN</a>
+        <a href="#contact">تواصل معنا</a>
     </div>
+
+    <a
+        class="whatsapp-nav"
+        href="https://wa.me/201096588861"
+        target="_blank">
+        WhatsApp
+    </a>
 
 </nav>
 
 
 <!-- HERO -->
 
-<header class="hero">
+<header class="hero" id="home">
 
     <div class="hero-content">
 
         <img
-            src="me.jpg"
-            alt="Ahmed Mohamed"
-            class="profile"
+            src="logo.png"
+            alt="X-MEN Logo"
+            class="hero-logo"
         >
 
-        <div class="terminal">
-            [ SYSTEM ONLINE ]
-        </div>
-
         <h1>
-            AHMED MOHAMED
+            X<span>-</span>MEN
         </h1>
 
-        <div class="codename">
-            XAT3LMAG8Ca
-        </div>
+        <p>
+            MEN'S FASHION • STREETWEAR • STYLE
+        </p>
 
-        <div class="typing">
-            <span id="typing"></span>
-            <span class="cursor">█</span>
-        </div>
-
-        <div class="status">
-            ● SYSTEM ACTIVE
-        </div>
+        <a
+            href="#products"
+            class="shop-btn">
+            اكتشف المجموعة
+        </a>
 
     </div>
 
 </header>
 
 
+<!-- PRODUCTS -->
+
+<section class="section" id="products">
+
+    <div class="section-title">
+
+        <h2>
+            أحدث <span>المنتجات</span>
+        </h2>
+
+        <p>
+            اختار الستايل اللي يناسبك
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+        <div class="product">
+
+            <div class="product-image">
+                صورة المنتج
+            </div>
+
+            <div class="product-info">
+
+                <h3>Oversized T-Shirt</h3>
+
+                <p>
+                    تيشيرت رجالي ستايل شبابي
+                </p>
+
+                <div class="price">
+                    499 EGP
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Oversized%20T-Shirt"
+                    target="_blank">
+                    اطلب الآن
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                صورة المنتج
+            </div>
+
+            <div class="product-info">
+
+                <h3>Premium Hoodie</h3>
+
+                <p>
+                    هودي رجالي بتصميم عصري
+                </p>
+
+                <div class="price">
+                    799 EGP
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Premium%20Hoodie"
+                    target="_blank">
+                    اطلب الآن
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product">
+
+            <div class="product-image">
+                صورة المنتج
+            </div>
+
+            <div class="product-info">
+
+                <h3>Streetwear Jacket</h3>
+
+                <p>
+                    جاكت رجالي للستايل الشتوي
+                </p>
+
+                <div class="price">
+                    999 EGP
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Streetwear%20Jacket"
+                    target="_blank">
+                    اطلب الآن
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="section" id="categories">
+
+    <div class="section-title">
+
+        <h2>
+            اختار <span>ستايلك</span>
+        </h2>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category">
+            T-SHIRTS
+        </div>
+
+        <div class="category">
+            HOODIES
+        </div>
+
+        <div class="category">
+            JACKETS
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- ABOUT -->
 
-<section id="about">
+<section class="section about" id="about">
 
-    <h2 class="section-title">
-        ABOUT_ME
-    </h2>
+    <div class="section-title">
 
-    <div class="about-box">
+        <h2>
+            ABOUT <span>X-MEN</span>
+        </h2>
+
+    </div>
+
+
+    <div class="about-content">
 
         <p>
 
-            Hello, I'm
-            <span class="highlight">
-                Ahmed Mohamed
-            </span>.
+            <strong>X-MEN</strong>
+            هي علامة ملابس رجالي بطابع شبابي
+            وستايل جريء.
 
-            <br><br>
+            <br>
 
-            My digital identity is
-            <span class="highlight">
-                XAT3LMAG8Ca
-            </span>.
+            بنجمع بين
+            <strong>الأسود والأبيض والأصفر</strong>
+            عشان نقدم Look مختلف ومميز.
 
-            <br><br>
+            <br>
 
-            I'm interested in technology,
-            cybersecurity, Linux, programming,
-            web development and digital exploration.
-
-            <br><br>
-
-            This is my personal digital space
-            where I share my interests,
-            projects and experience.
+            لبسك مش مجرد لبس...
+            <strong>ده ستايلك.</strong>
 
         </p>
 
@@ -477,172 +622,26 @@ footer strong{
 </section>
 
 
-<!-- SKILLS -->
-
-<section id="skills">
-
-    <h2 class="section-title">
-        SKILLS
-    </h2>
-
-    <div class="skills">
-
-        <div class="skill">
-            <span>[01]</span>
-            Cybersecurity
-        </div>
-
-        <div class="skill">
-            <span>[02]</span>
-            Linux
-        </div>
-
-        <div class="skill">
-            <span>[03]</span>
-            Python
-        </div>
-
-        <div class="skill">
-            <span>[04]</span>
-            Git & GitHub
-        </div>
-
-        <div class="skill">
-            <span>[05]</span>
-            Termux
-        </div>
-
-        <div class="skill">
-            <span>[06]</span>
-            Web Development
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-    <h2 class="section-title">
-        PROJECTS
-    </h2>
-
-    <div class="projects">
-
-        <div class="project">
-
-            <h3>
-                > Personal Portfolio
-            </h3>
-
-            <p>
-                A personal cyber-style portfolio
-                built using HTML, CSS and JavaScript.
-            </p>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>
-                > Fashion Accessories
-            </h3>
-
-            <p>
-                A fashion accessories website
-                deployed using GitHub and Vercel.
-            </p>
-
-        </div>
-
-
-        <div class="project">
-
-            <h3>
-                > Cybersecurity Lab
-            </h3>
-
-            <p>
-                Personal learning experiments
-                involving Linux, networking,
-                security and automation.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
 <!-- CONTACT -->
 
-<section id="contact" class="contact">
+<section class="contact" id="contact">
 
-    <h2 class="section-title">
-        CONTACT
+    <h2>
+        READY TO SHOP?
     </h2>
 
     <p>
-        Connect with me across the digital world.
+        اطلب منتجاتك دلوقتي عن طريق WhatsApp
     </p>
 
+    <a
+        class="contact-btn"
+        href="https://wa.me/201096588861"
+        target="_blank">
 
-    <div class="buttons">
+        تواصل معنا على WhatsApp
 
-        <!-- WHATSAPP -->
-
-        <a
-            class="btn"
-            href="https://wa.me/201500083355"
-            target="_blank">
-            WhatsApp
-        </a>
-
-
-        <!-- TELEGRAM -->
-
-        <a
-            class="btn"
-            href="https://t.me/XAT3LMAG8Ca"
-            target="_blank">
-            Telegram
-        </a>
-
-    </div>
-
-
-    <div class="social-title">
-        SOCIAL NETWORKS
-    </div>
-
-
-    <div class="social-buttons">
-
-        <!-- INSTAGRAM -->
-
-        <a
-            class="social"
-            href="https://www.instagram.com/xat_3lmag8c/"
-            target="_blank">
-            Instagram
-        </a>
-
-
-        <!-- FACEBOOK الجديد -->
-
-        <a
-            class="social"
-            href="https://www.facebook.com/share/1CD33D2sym/"
-            target="_blank">
-            Facebook
-        </a>
-
-    </div>
+    </a>
 
 </section>
 
@@ -653,130 +652,11 @@ footer strong{
 
     <p>
         © 2026
-        <strong>XAT3LMAG8Ca</strong>
-        — Ahmed Mohamed
+        <strong>X-MEN</strong>
+        — Men's Fashion
     </p>
 
 </footer>
-
-
-<script>
-
-/* TYPING EFFECT */
-
-const text =
-"CYBERSECURITY • TECHNOLOGY • CODE • DIGITAL EXPLORATION";
-
-let index = 0;
-
-function typeText(){
-
-    if(index < text.length){
-
-        document.getElementById("typing")
-        .textContent += text.charAt(index);
-
-        index++;
-
-        setTimeout(typeText,45);
-    }
-}
-
-typeText();
-
-
-/* MATRIX EFFECT */
-
-const canvas =
-document.getElementById("matrix");
-
-const ctx =
-canvas.getContext("2d");
-
-function resizeCanvas(){
-
-    canvas.width =
-    window.innerWidth;
-
-    canvas.height =
-    window.innerHeight;
-
-}
-
-resizeCanvas();
-
-window.addEventListener(
-    "resize",
-    resizeCanvas
-);
-
-const characters =
-"01ABCDEFGHIJKLMNOPQRSTUVWXYZ#$%";
-
-const fontSize = 14;
-
-let columns =
-Math.floor(canvas.width / fontSize);
-
-let drops =
-Array(columns).fill(1);
-
-function matrix(){
-
-    ctx.fillStyle =
-    "rgba(0,0,0,0.06)";
-
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
-
-    ctx.fillStyle =
-    "#00ff66";
-
-    ctx.font =
-    fontSize + "px monospace";
-
-    for(
-        let i=0;
-        i<drops.length;
-        i++
-    ){
-
-        const char =
-        characters[
-            Math.floor(
-                Math.random() *
-                characters.length
-            )
-        ];
-
-        ctx.fillText(
-            char,
-            i * fontSize,
-            drops[i] * fontSize
-        );
-
-        if(
-            drops[i] * fontSize >
-            canvas.height &&
-            Math.random() > .975
-        ){
-
-            drops[i] = 0;
-
-        }
-
-        drops[i]++;
-
-    }
-}
-
-setInterval(matrix,50);
-
-</script>
 
 </body>
 </html>
