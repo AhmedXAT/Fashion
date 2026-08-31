@@ -198,6 +198,7 @@
         .product:hover {
             transform: translateY(-8px);
             border-color: var(--yellow);
+            box-shadow: 0 10px 30px rgba(255,196,0,.08);
         }
 
         .product-image {
@@ -205,9 +206,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #181818;
+            background:
+                linear-gradient(135deg,#181818,#0b0b0b);
             color: #555;
             font-size: 18px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .product-info {
@@ -330,6 +339,39 @@
             transform: translateY(-3px);
         }
 
+        /* FACEBOOK */
+
+        .facebook-section {
+            text-align: center;
+            background: #111;
+            padding: 55px 20px;
+        }
+
+        .facebook-section h2 {
+            color: var(--yellow);
+            margin-bottom: 12px;
+        }
+
+        .facebook-section p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .facebook-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border: 1px solid var(--yellow);
+            color: var(--yellow);
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .facebook-btn:hover {
+            background: var(--yellow);
+            color: #000;
+            box-shadow: 0 0 25px rgba(255,196,0,.3);
+        }
+
         /* FOOTER */
 
         footer {
@@ -413,12 +455,6 @@
 
     <div class="hero-content">
 
-        <img
-            src="logo.png"
-            alt="X-MEN Logo"
-            class="hero-logo"
-        >
-
         <h1>
             X<span>-</span>MEN
         </h1>
@@ -457,18 +493,131 @@
 
     <div class="products">
 
+
+        <!-- PRODUCT 1 -->
+
         <div class="product">
 
             <div class="product-image">
-                صورة المنتج
+                صورة الترنج
             </div>
 
             <div class="product-info">
 
-                <h3>Oversized T-Shirt</h3>
+                <h3>
+                    Trendy Tracksuit
+                </h3>
 
                 <p>
-                    تيشيرت رجالي ستايل شبابي
+                    ترنج رجالي شبابي بتصميم عصري
+                </p>
+
+                <div class="price">
+                    899 EGP
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Trendy%20Tracksuit"
+                    target="_blank">
+
+                    اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                صورة السويت بانتس
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Premium Sweat Pants
+                </h3>
+
+                <p>
+                    سويت بانتس رجالي بخامة عالية الجودة
+                </p>
+
+                <div class="price">
+                    499 EGP
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Premium%20Sweat%20Pants"
+                    target="_blank">
+
+                    اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                صورة السويت
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Sweat Set
+                </h3>
+
+                <p>
+                    سويت شيرت مع سويت بانتس
+                </p>
+
+                <div class="price">
+                    799 EGP
+                </div>
+
+                <a
+                    class="order-btn"
+                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Sweat%20Set"
+                    target="_blank">
+
+                    اطلب الآن
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product">
+
+            <div class="product-image">
+                صورة التيشيرت
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Oversized T-Shirt
+                </h3>
+
+                <p>
+                    تيشيرت رجالي Oversized ستايل شبابي
                 </p>
 
                 <div class="price">
@@ -479,67 +628,9 @@
                     class="order-btn"
                     href="https://wa.me/201096588861?text=عايز%20اطلب%20Oversized%20T-Shirt"
                     target="_blank">
+
                     اطلب الآن
-                </a>
 
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-                صورة المنتج
-            </div>
-
-            <div class="product-info">
-
-                <h3>Premium Hoodie</h3>
-
-                <p>
-                    هودي رجالي بتصميم عصري
-                </p>
-
-                <div class="price">
-                    799 EGP
-                </div>
-
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Premium%20Hoodie"
-                    target="_blank">
-                    اطلب الآن
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="product">
-
-            <div class="product-image">
-                صورة المنتج
-            </div>
-
-            <div class="product-info">
-
-                <h3>Streetwear Jacket</h3>
-
-                <p>
-                    جاكت رجالي للستايل الشتوي
-                </p>
-
-                <div class="price">
-                    999 EGP
-                </div>
-
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Streetwear%20Jacket"
-                    target="_blank">
-                    اطلب الآن
                 </a>
 
             </div>
@@ -571,11 +662,11 @@
         </div>
 
         <div class="category">
-            HOODIES
+            TRACKSUITS
         </div>
 
         <div class="category">
-            JACKETS
+            SWEAT PANTS
         </div>
 
     </div>
@@ -622,6 +713,30 @@
 </section>
 
 
+<!-- FACEBOOK -->
+
+<section class="facebook-section">
+
+    <h2>
+        تابع X-MEN على Facebook
+    </h2>
+
+    <p>
+        تابع أحدث المنتجات والعروض والتحديثات
+    </p>
+
+    <a
+        class="facebook-btn"
+        href="https://www.facebook.com/share/1CD33D2sym/"
+        target="_blank">
+
+        تابعنا على Facebook
+
+    </a>
+
+</section>
+
+
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
@@ -657,6 +772,7 @@
     </p>
 
 </footer>
+
 
 </body>
 </html>
