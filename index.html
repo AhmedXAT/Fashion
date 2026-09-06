@@ -3,9 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>X-MEN | Men's Fashion</title>
 
@@ -40,7 +38,9 @@
             text-decoration: none;
         }
 
-        /* NAVBAR */
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
             position: sticky;
@@ -88,7 +88,9 @@
             font-weight: bold;
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 650px;
@@ -155,12 +157,15 @@
 
         .shop-btn:hover {
             transform: translateY(-4px);
+
             box-shadow:
                 0 10px 30px
                 rgba(255,196,0,.25);
         }
 
-        /* SECTIONS */
+        /* =========================
+           SECTIONS
+        ========================= */
 
         .section {
             padding: 80px 7%;
@@ -186,7 +191,9 @@
             margin-top: 10px;
         }
 
-        /* FILTERS */
+        /* =========================
+           FILTERS
+        ========================= */
 
         .product-filters {
             display: flex;
@@ -200,12 +207,18 @@
         .filter-btn {
             background: #111;
             color: #fff;
+
             border: 1px solid #333;
+
             padding: 12px 25px;
+
             font-size: 15px;
             font-weight: bold;
+
             cursor: pointer;
+
             transition: .3s;
+
             border-radius: 5px;
         }
 
@@ -216,26 +229,36 @@
             border-color: var(--yellow);
         }
 
-        /* PRODUCTS */
+        /* =========================
+           PRODUCTS
+        ========================= */
 
         .products {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
+
             max-width: 1200px;
+
             margin: auto;
         }
 
         .product {
             background: var(--gray);
+
             border: 1px solid #222;
+
             transition: .3s;
+
             overflow: hidden;
+
             border-radius: 8px;
         }
 
         .product:hover {
             transform: translateY(-8px);
+
             border-color: var(--yellow);
 
             box-shadow:
@@ -263,9 +286,14 @@
         .product-image img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
             display: block;
+
             transition: .5s;
+
+            cursor: zoom-in;
         }
 
         .product:hover .product-image img {
@@ -278,10 +306,15 @@
 
         .product-category {
             display: inline-block;
+
             color: var(--yellow);
+
             font-size: 12px;
+
             font-weight: bold;
+
             margin-bottom: 8px;
+
             text-transform: uppercase;
         }
 
@@ -292,25 +325,37 @@
 
         .product-info p {
             color: #888;
+
             margin-bottom: 15px;
+
             line-height: 1.6;
         }
 
         .price {
             color: var(--yellow);
+
             font-size: 23px;
+
             font-weight: bold;
         }
 
         .order-btn {
             display: block;
+
             text-align: center;
+
             margin-top: 18px;
+
             padding: 12px;
+
             border: 1px solid var(--yellow);
+
             color: var(--yellow);
+
             font-weight: bold;
+
             transition: .3s;
+
             border-radius: 4px;
         }
 
@@ -319,36 +364,157 @@
             color: #000;
         }
 
-        /* CATEGORIES */
+        /* =========================
+           IMAGE LIGHTBOX
+        ========================= */
+
+        .image-lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(0,0,0,.94);
+
+            cursor: zoom-out;
+        }
+
+        .image-lightbox.active {
+            display: flex;
+        }
+
+        .image-lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+
+            width: auto;
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 0 50px
+                rgba(255,196,0,.18);
+
+            cursor: default;
+
+            animation: imageZoom .25s ease;
+        }
+
+        @keyframes imageZoom {
+
+            from {
+                transform: scale(.75);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+        }
+
+        .lightbox-close {
+            position: absolute;
+
+            top: 20px;
+            right: 25px;
+
+            width: 48px;
+            height: 48px;
+
+            border: 2px solid var(--yellow);
+
+            background: #000;
+
+            color: var(--yellow);
+
+            border-radius: 50%;
+
+            font-size: 32px;
+
+            line-height: 40px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            z-index: 10000;
+
+            transition: .3s;
+        }
+
+        .lightbox-close:hover {
+            background: var(--yellow);
+
+            color: #000;
+
+            transform: rotate(90deg);
+        }
+
+        /* =========================
+           CATEGORIES
+        ========================= */
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
+
             max-width: 1100px;
+
             margin: auto;
         }
 
         .category {
             min-height: 180px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             background: #111;
+
             border: 1px solid #292929;
+
             font-size: 30px;
+
             font-weight: 900;
+
             font-style: italic;
+
             transition: .3s;
+
+            cursor: pointer;
         }
 
         .category:hover {
             background: var(--yellow);
+
             color: #000;
+
             transform: scale(1.02);
         }
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about {
             background: #0c0c0c;
@@ -356,13 +522,17 @@
 
         .about-content {
             max-width: 900px;
+
             margin: auto;
+
             text-align: center;
         }
 
         .about-content p {
             color: #bbb;
+
             font-size: 19px;
+
             line-height: 2;
         }
 
@@ -370,65 +540,91 @@
             color: var(--yellow);
         }
 
-        /* FACEBOOK */
+        /* =========================
+           FACEBOOK
+        ========================= */
 
         .facebook-section {
             text-align: center;
+
             background: #111;
+
             padding: 55px 20px;
         }
 
         .facebook-section h2 {
             color: var(--yellow);
+
             margin-bottom: 12px;
         }
 
         .facebook-section p {
             color: #aaa;
+
             margin-bottom: 25px;
         }
 
         .facebook-btn {
             display: inline-block;
+
             padding: 14px 30px;
+
             border: 1px solid var(--yellow);
+
             color: var(--yellow);
+
             font-weight: bold;
+
             transition: .3s;
         }
 
         .facebook-btn:hover {
             background: var(--yellow);
+
             color: #000;
         }
 
-        /* CONTACT */
+        /* =========================
+           CONTACT
+        ========================= */
 
         .contact {
             text-align: center;
+
             background: var(--yellow);
+
             color: #000;
+
             padding: 55px 20px;
         }
 
         .contact h2 {
             font-size: 45px;
+
             font-weight: 1000;
+
             font-style: italic;
         }
 
         .contact p {
             margin: 15px 0 25px;
+
             font-size: 18px;
         }
 
         .contact-btn {
             display: inline-block;
+
             background: #000;
+
             color: #fff;
+
             padding: 15px 30px;
+
             font-weight: bold;
+
             border-radius: 5px;
+
             transition: .3s;
         }
 
@@ -436,12 +632,17 @@
             transform: translateY(-3px);
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             background: #000;
+
             text-align: center;
+
             padding: 35px 20px;
+
             color: #777;
         }
 
@@ -449,7 +650,9 @@
             color: var(--yellow);
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
@@ -467,6 +670,7 @@
 
             .whatsapp-nav {
                 padding: 9px 12px;
+
                 font-size: 13px;
             }
 
@@ -496,8 +700,29 @@
 
             .filter-btn {
                 padding: 10px 15px;
+
                 font-size: 13px;
             }
+
+            .image-lightbox {
+                padding: 10px;
+            }
+
+            .image-lightbox img {
+                max-width: 96%;
+                max-height: 82vh;
+            }
+
+            .lightbox-close {
+                top: 15px;
+                right: 15px;
+
+                width: 44px;
+                height: 44px;
+
+                font-size: 28px;
+            }
+
         }
 
     </style>
@@ -506,7 +731,9 @@
 
 <body>
 
-<!-- NAVBAR -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav>
 
@@ -539,7 +766,9 @@
 
 </nav>
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header
     class="hero"
@@ -571,7 +800,9 @@
 
 </header>
 
-<!-- PRODUCTS -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
 <section
     class="section"
@@ -589,8 +820,6 @@
         </p>
 
     </div>
-
-    <!-- FILTER BUTTONS -->
 
     <div class="product-filters">
 
@@ -643,7 +872,9 @@
 
 </section>
 
-<!-- CATEGORIES -->
+<!-- =========================
+     CATEGORIES
+========================= -->
 
 <section
     class="section"
@@ -688,7 +919,9 @@
 
 </section>
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section
     class="section about"
@@ -736,7 +969,9 @@
 
 </section>
 
-<!-- FACEBOOK -->
+<!-- =========================
+     FACEBOOK
+========================= -->
 
 <section
     class="facebook-section">
@@ -761,7 +996,9 @@
 
 </section>
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section
     class="contact"
@@ -787,7 +1024,9 @@
 
 </section>
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -806,13 +1045,35 @@
 
 </footer>
 
-<!-- JAVASCRIPT -->
+<!-- =========================
+     IMAGE LIGHTBOX
+========================= -->
+
+<div
+    class="image-lightbox"
+    id="imageLightbox">
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button">
+
+        ×
+
+    </button>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt="X-MEN Product">
+
+</div>
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
-
-/* =========================================
-   PRODUCTS DATABASE
-========================================= */
 
 const products = [
 
@@ -914,10 +1175,14 @@ const products = [
 
 ];
 
+
 /* PRODUCTS CONTAINER */
 
 const productsContainer =
-    document.getElementById("productsContainer");
+    document.getElementById(
+        "productsContainer"
+    );
+
 
 /* CATEGORY NAMES */
 
@@ -933,9 +1198,12 @@ const categoryNames = {
 
 };
 
+
 /* DISPLAY PRODUCTS */
 
-function displayProducts(category = "all") {
+function displayProducts(
+    category = "all"
+) {
 
     productsContainer.innerHTML = "";
 
@@ -955,88 +1223,119 @@ function displayProducts(category = "all") {
 
     }
 
-    filteredProducts.forEach(product => {
 
-        const message =
-            `عايز اطلب ${product.name} بسعر ${product.price} EGP`;
+    filteredProducts.forEach(
+        product => {
 
-        const card =
-            document.createElement("div");
+            const message =
+                `عايز اطلب ${product.name} بسعر ${product.price} EGP`;
 
-        card.className = "product";
 
-        card.innerHTML = `
+            const card =
+                document.createElement("div");
 
-            <div class="product-image">
 
-                <img
-                    src="${product.image}"
-                    alt="${product.name}"
-                    onerror="
-                        this.onerror=null;
-                        this.src='https://via.placeholder.com/600x600/111111/ffc400?text=X-MEN';
-                    "
-                >
+            card.className =
+                "product";
 
-            </div>
 
-            <div class="product-info">
+            card.innerHTML = `
 
-                <span class="product-category">
-                    ${categoryNames[product.category]}
-                </span>
+                <div class="product-image">
 
-                <h3>
-                    ${product.name}
-                </h3>
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        onerror="
+                            this.onerror=null;
+                            this.src='https://via.placeholder.com/600x600/111111/ffc400?text=X-MEN';
+                        "
+                    >
 
-                <p>
-                    ${product.description}
-                </p>
-
-                <div class="price">
-                    ${product.price} EGP
                 </div>
 
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=${encodeURIComponent(message)}"
-                    target="_blank">
 
-                    اطلب الآن
+                <div class="product-info">
 
-                </a>
+                    <span class="product-category">
+                        ${categoryNames[product.category]}
+                    </span>
 
-            </div>
-        `;
 
-        productsContainer.appendChild(card);
+                    <h3>
+                        ${product.name}
+                    </h3>
 
-    });
+
+                    <p>
+                        ${product.description}
+                    </p>
+
+
+                    <div class="price">
+                        ${product.price} EGP
+                    </div>
+
+
+                    <a
+                        class="order-btn"
+                        href="https://wa.me/201096588861?text=${encodeURIComponent(message)}"
+                        target="_blank">
+
+                        اطلب الآن
+
+                    </a>
+
+                </div>
+
+            `;
+
+
+            productsContainer.appendChild(
+                card
+            );
+
+        }
+    );
 
 }
 
+
 /* FILTER PRODUCTS */
 
-function filterProducts(category) {
+function filterProducts(
+    category
+) {
 
-    displayProducts(category);
+    displayProducts(
+        category
+    );
+
 
     document
         .querySelectorAll(".filter-btn")
-        .forEach(button => {
+        .forEach(
+            button => {
 
-            button.classList.remove("active");
+                button.classList.remove(
+                    "active"
+                );
 
-            if (
-                button.dataset.category === category
-            ) {
 
-                button.classList.add("active");
+                if (
+                    button.dataset.category ===
+                    category
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
 
             }
+        );
 
-        });
 
     document
         .getElementById("products")
@@ -1046,31 +1345,157 @@ function filterProducts(category) {
 
 }
 
+
 /* FILTER BUTTON EVENTS */
 
 document
     .querySelectorAll(".filter-btn")
-    .forEach(button => {
+    .forEach(
+        button => {
 
-        button.addEventListener(
-            "click",
-            function() {
+            button.addEventListener(
+                "click",
+                function() {
 
-                const category =
-                    this.dataset.category;
+                    const category =
+                        this.dataset.category;
 
-                filterProducts(category);
+                    filterProducts(
+                        category
+                    );
 
-            }
-        );
+                }
+            );
 
-    });
+        }
+    );
+
 
 /* LOAD ALL PRODUCTS */
 
 displayProducts("all");
 
+
+/* =========================
+   IMAGE LIGHTBOX JAVASCRIPT
+========================= */
+
+const imageLightbox =
+    document.getElementById(
+        "imageLightbox"
+    );
+
+
+const lightboxImage =
+    document.getElementById(
+        "lightboxImage"
+    );
+
+
+const lightboxClose =
+    document.getElementById(
+        "lightboxClose"
+    );
+
+
+/* OPEN IMAGE */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target.tagName === "IMG" &&
+            event.target.closest(".product-image")
+        ) {
+
+            lightboxImage.src =
+                event.target.src;
+
+            lightboxImage.alt =
+                event.target.alt;
+
+            imageLightbox.classList.add(
+                "active"
+            );
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+    }
+);
+
+
+/* CLOSE BUTTON */
+
+lightboxClose.addEventListener(
+    "click",
+    function() {
+
+        closeLightbox();
+
+    }
+);
+
+
+/* CLOSE BY CLICKING OUTSIDE */
+
+imageLightbox.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === imageLightbox
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+/* CLOSE WITH ESC */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape" &&
+            imageLightbox.classList.contains(
+                "active"
+            )
+        ) {
+
+            closeLightbox();
+
+        }
+
+    }
+);
+
+
+/* CLOSE FUNCTION */
+
+function closeLightbox() {
+
+    imageLightbox.classList.remove(
+        "active"
+    );
+
+    lightboxImage.src = "";
+
+    document.body.style.overflow =
+        "";
+
+}
+
 </script>
 
 </body>
+
 </html>
