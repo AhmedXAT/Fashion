@@ -1,472 +1,1079 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>X-MEN | Men's Fashion</title>
 
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+
         :root {
+
             --yellow: #ffc400;
             --black: #050505;
             --white: #ffffff;
             --gray: #111111;
             --light-gray: #999999;
+
         }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
 
         body {
+
             background: var(--black);
             color: var(--white);
-            font-family: Arial, Tahoma, sans-serif;
+
+            font-family:
+                Arial,
+                Tahoma,
+                sans-serif;
+
         }
+
 
         a {
+
             color: inherit;
             text-decoration: none;
+
         }
 
-        /* NAVBAR */
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
+
             position: sticky;
             top: 0;
+
             z-index: 1000;
+
             height: 75px;
+
             padding: 0 7%;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
-            background: rgba(5,5,5,.95);
-            border-bottom: 2px solid var(--yellow);
+
+            background: rgba(5,5,5,.96);
+
+            border-bottom:
+                2px solid
+                var(--yellow);
+
         }
+
 
         .nav-logo {
+
             font-size: 28px;
+
             font-weight: 900;
+
             font-style: italic;
+
             letter-spacing: 3px;
+
         }
+
 
         .nav-logo span {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
         }
+
 
         .nav-links {
+
             display: flex;
+
             gap: 30px;
+
         }
+
 
         .nav-links a {
+
             font-weight: bold;
+
             transition: .3s;
+
         }
+
 
         .nav-links a:hover {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
         }
+
 
         .whatsapp-nav {
-            background: var(--yellow);
+
+            background:
+                var(--yellow);
+
             color: #000;
-            padding: 11px 18px;
-            border-radius: 4px;
+
+            padding:
+                11px 18px;
+
+            border-radius: 5px;
+
             font-weight: bold;
+
         }
 
-        /* HERO */
+
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
+
             min-height: 650px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             text-align: center;
+
             padding: 70px 20px;
+
             background:
-                radial-gradient(circle at center, #222 0%, #050505 65%);
+
+                radial-gradient(
+                    circle at center,
+                    #222 0%,
+                    #050505 65%
+                );
+
             position: relative;
+
             overflow: hidden;
+
         }
+
 
         .hero::before {
+
             content: "";
+
             position: absolute;
+
             width: 500px;
+
             height: 500px;
-            background: var(--yellow);
+
+            background:
+                var(--yellow);
+
             opacity: .08;
-            filter: blur(100px);
+
+            filter:
+                blur(100px);
+
             border-radius: 50%;
+
         }
+
 
         .hero-content {
+
             position: relative;
+
             z-index: 2;
+
         }
 
-        .hero-logo {
-            width: min(600px, 90vw);
-            max-height: 300px;
-            object-fit: contain;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 25px rgba(255,196,0,.25));
-        }
 
         .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
+
+            font-size:
+                clamp(
+                    45px,
+                    8vw,
+                    90px
+                );
+
             font-weight: 1000;
+
             font-style: italic;
+
             letter-spacing: 5px;
+
         }
+
 
         .hero h1 span {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
         }
+
 
         .hero p {
+
             color: #ccc;
+
             font-size: 20px;
-            margin: 15px 0 30px;
+
+            margin:
+                15px 0 30px;
+
         }
+
 
         .shop-btn {
+
             display: inline-block;
-            background: var(--yellow);
+
+            background:
+                var(--yellow);
+
             color: #000;
-            padding: 16px 35px;
+
+            padding:
+                16px 35px;
+
             font-size: 18px;
+
             font-weight: 900;
-            border-radius: 3px;
+
+            border-radius: 4px;
+
             transition: .3s;
+
         }
+
 
         .shop-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(255,196,0,.25);
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    255,
+                    196,
+                    0,
+                    .25
+                );
+
         }
 
-        /* SECTION */
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
 
         .section {
-            padding: 80px 7%;
+
+            padding:
+                80px 7%;
+
         }
+
 
         .section-title {
+
             text-align: center;
+
             margin-bottom: 45px;
+
         }
+
 
         .section-title h2 {
+
             font-size: 42px;
+
             font-weight: 900;
+
             font-style: italic;
+
         }
+
 
         .section-title span {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
         }
+
 
         .section-title p {
-            color: var(--light-gray);
+
+            color:
+                var(--light-gray);
+
             margin-top: 10px;
+
         }
 
-        /* PRODUCTS */
+
+
+        /* =========================
+           FILTERS
+        ========================= */
+
+        .product-filters {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .filter-btn {
+
+            background: #111;
+
+            color: #fff;
+
+            border:
+                1px solid #333;
+
+            padding:
+                12px 25px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: .3s;
+
+            border-radius: 5px;
+
+        }
+
+
+        .filter-btn:hover {
+
+            background:
+                var(--yellow);
+
+            color: #000;
+
+            border-color:
+                var(--yellow);
+
+        }
+
+
+        .filter-btn.active {
+
+            background:
+                var(--yellow);
+
+            color: #000;
+
+            border-color:
+                var(--yellow);
+
+        }
+
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
 
         .products {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 25px;
+
             max-width: 1200px;
+
             margin: auto;
+
         }
+
 
         .product {
-            background: var(--gray);
-            border: 1px solid #222;
+
+            background:
+                var(--gray);
+
+            border:
+                1px solid #222;
+
             transition: .3s;
+
             overflow: hidden;
+
+            border-radius: 8px;
+
         }
+
 
         .product:hover {
-            transform: translateY(-8px);
-            border-color: var(--yellow);
-            box-shadow: 0 10px 30px rgba(255,196,0,.08);
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                var(--yellow);
+
+            box-shadow:
+                0 10px 30px
+                rgba(
+                    255,
+                    196,
+                    0,
+                    .10
+                );
+
         }
+
 
         .product-image {
+
             height: 330px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             background:
-                linear-gradient(135deg,#181818,#0b0b0b);
-            color: #555;
-            font-size: 18px;
+
+                linear-gradient(
+                    135deg,
+                    #181818,
+                    #0b0b0b
+                );
+
             overflow: hidden;
+
         }
+
 
         .product-image img {
+
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
+
+            display: block;
+
+            transition: .5s;
+
         }
+
+
+        .product:hover
+        .product-image img {
+
+            transform:
+                scale(1.06);
+
+        }
+
 
         .product-info {
+
             padding: 22px;
+
         }
+
+
+        .product-category {
+
+            display: inline-block;
+
+            color:
+                var(--yellow);
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            text-transform:
+                uppercase;
+
+        }
+
 
         .product-info h3 {
+
             font-size: 22px;
+
             margin-bottom: 10px;
+
         }
+
 
         .product-info p {
+
             color: #888;
+
             margin-bottom: 15px;
+
+            line-height: 1.6;
+
         }
+
 
         .price {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
             font-size: 23px;
+
             font-weight: bold;
+
         }
+
 
         .order-btn {
+
             display: block;
+
             text-align: center;
+
             margin-top: 18px;
+
             padding: 12px;
-            border: 1px solid var(--yellow);
-            color: var(--yellow);
+
+            border:
+                1px solid
+                var(--yellow);
+
+            color:
+                var(--yellow);
+
             font-weight: bold;
+
             transition: .3s;
+
+            border-radius: 4px;
+
         }
+
 
         .order-btn:hover {
-            background: var(--yellow);
+
+            background:
+                var(--yellow);
+
             color: #000;
+
         }
 
-        /* ABOUT */
 
-        .about {
-            background: #0c0c0c;
-        }
 
-        .about-content {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-content p {
-            color: #bbb;
-            font-size: 19px;
-            line-height: 2;
-        }
-
-        .about-content strong {
-            color: var(--yellow);
-        }
-
-        /* CATEGORIES */
+        /* =========================
+           CATEGORIES
+        ========================= */
 
         .categories {
+
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
             gap: 20px;
+
             max-width: 1100px;
+
             margin: auto;
+
         }
+
 
         .category {
+
             min-height: 180px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             background: #111;
-            border: 1px solid #292929;
+
+            border:
+                1px solid #292929;
+
             font-size: 30px;
+
             font-weight: 900;
+
             font-style: italic;
+
             transition: .3s;
+
         }
+
 
         .category:hover {
-            background: var(--yellow);
+
+            background:
+                var(--yellow);
+
             color: #000;
-            transform: scale(1.02);
+
+            transform:
+                scale(1.02);
+
         }
 
-        /* CONTACT */
 
-        .contact {
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+
+            background:
+                #0c0c0c;
+
+        }
+
+
+        .about-content {
+
+            max-width: 900px;
+
+            margin: auto;
+
             text-align: center;
-            background: var(--yellow);
-            color: #000;
+
         }
 
-        .contact h2 {
-            font-size: 45px;
-            font-weight: 1000;
-            font-style: italic;
+
+        .about-content p {
+
+            color: #bbb;
+
+            font-size: 19px;
+
+            line-height: 2;
+
         }
 
-        .contact p {
-            margin: 15px 0 25px;
-            font-size: 18px;
+
+        .about-content strong {
+
+            color:
+                var(--yellow);
+
         }
 
-        .contact-btn {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            padding: 15px 30px;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: .3s;
-        }
 
-        .contact-btn:hover {
-            transform: translateY(-3px);
-        }
 
-        /* FACEBOOK */
+        /* =========================
+           FACEBOOK
+        ========================= */
 
         .facebook-section {
+
             text-align: center;
+
             background: #111;
-            padding: 55px 20px;
+
+            padding:
+                55px 20px;
+
         }
+
 
         .facebook-section h2 {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
             margin-bottom: 12px;
+
         }
+
 
         .facebook-section p {
+
             color: #aaa;
+
             margin-bottom: 25px;
+
         }
+
 
         .facebook-btn {
+
             display: inline-block;
-            padding: 14px 30px;
-            border: 1px solid var(--yellow);
-            color: var(--yellow);
+
+            padding:
+                14px 30px;
+
+            border:
+                1px solid
+                var(--yellow);
+
+            color:
+                var(--yellow);
+
             font-weight: bold;
+
             transition: .3s;
+
         }
+
 
         .facebook-btn:hover {
-            background: var(--yellow);
+
+            background:
+                var(--yellow);
+
             color: #000;
-            box-shadow: 0 0 25px rgba(255,196,0,.3);
+
         }
 
-        /* FOOTER */
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+
+            text-align: center;
+
+            background:
+                var(--yellow);
+
+            color: #000;
+
+            padding:
+                55px 20px;
+
+        }
+
+
+        .contact h2 {
+
+            font-size: 45px;
+
+            font-weight: 1000;
+
+            font-style: italic;
+
+        }
+
+
+        .contact p {
+
+            margin:
+                15px 0 25px;
+
+            font-size: 18px;
+
+        }
+
+
+        .contact-btn {
+
+            display: inline-block;
+
+            background: #000;
+
+            color: #fff;
+
+            padding:
+                15px 30px;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+            transition: .3s;
+
+        }
+
+
+        .contact-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+        }
+
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+
             background: #000;
+
             text-align: center;
-            padding: 35px 20px;
+
+            padding:
+                35px 20px;
+
             color: #777;
+
         }
+
 
         footer strong {
-            color: var(--yellow);
+
+            color:
+                var(--yellow);
+
         }
 
-        /* MOBILE */
+
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
-            .nav-links {
-                display: none;
+            nav {
+
+                padding:
+                    0 4%;
+
             }
+
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+
+            .nav-logo {
+
+                font-size: 23px;
+
+            }
+
 
             .whatsapp-nav {
-                padding: 9px 12px;
+
+                padding:
+                    9px 12px;
+
                 font-size: 13px;
+
             }
+
 
             .products {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
+
             }
+
 
             .categories {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
+
             }
+
 
             .hero {
-                min-height: 580px;
+
+                min-height:
+                    580px;
+
             }
 
-            .hero-logo {
-                max-height: 220px;
+
+            .hero h1 {
+
+                font-size: 60px;
+
             }
+
 
             .section-title h2 {
+
                 font-size: 34px;
+
             }
+
+
+            .product-filters {
+
+                gap: 8px;
+
+            }
+
+
+            .filter-btn {
+
+                padding:
+                    10px 15px;
+
+                font-size: 13px;
+
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-<!-- NAVBAR -->
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav>
 
     <div class="nav-logo">
+
         X<span>-</span>MEN
+
     </div>
 
+
     <div class="nav-links">
-        <a href="#home">الرئيسية</a>
-        <a href="#products">المنتجات</a>
-        <a href="#categories">الأقسام</a>
-        <a href="#about">عن X-MEN</a>
-        <a href="#contact">تواصل معنا</a>
+
+        <a href="#home">
+            الرئيسية
+        </a>
+
+        <a href="#products">
+            المنتجات
+        </a>
+
+        <a href="#categories">
+            الأقسام
+        </a>
+
+        <a href="#about">
+            عن X-MEN
+        </a>
+
+        <a href="#contact">
+            تواصل معنا
+        </a>
+
     </div>
+
 
     <a
         class="whatsapp-nav"
         href="https://wa.me/201096588861"
         target="_blank">
+
         WhatsApp
+
     </a>
 
 </nav>
 
 
-<!-- HERO -->
 
-<header class="hero" id="home">
+<!-- =========================
+     HERO
+========================= -->
+
+<header
+    class="hero"
+    id="home">
 
     <div class="hero-content">
 
         <h1>
+
             X<span>-</span>MEN
+
         </h1>
 
+
         <p>
-            MEN'S FASHION • STREETWEAR • STYLE
+
+            MEN'S FASHION
+            •
+            STREETWEAR
+            •
+            STYLE
+
         </p>
+
 
         <a
             href="#products"
             class="shop-btn">
+
             اكتشف المجموعة
+
         </a>
 
     </div>
@@ -474,214 +1081,181 @@
 </header>
 
 
-<!-- PRODUCTS -->
 
-<section class="section" id="products">
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+    class="section"
+    id="products">
+
 
     <div class="section-title">
 
         <h2>
-            أحدث <span>المنتجات</span>
+
+            أحدث
+            <span>
+                المنتجات
+            </span>
+
         </h2>
 
+
         <p>
+
             اختار الستايل اللي يناسبك
+
         </p>
 
     </div>
 
 
-    <div class="products">
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="product-filters">
+
+        <button
+            class="filter-btn active"
+            data-category="all">
+
+            الكل
+
+        </button>
 
 
-        <!-- PRODUCT 1 -->
+        <button
+            class="filter-btn"
+            data-category="tshirts">
 
-        <div class="product">
+            T-SHIRTS
 
-            <div class="product-image">
-                صورة الترنج
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Trendy Tracksuit
-                </h3>
-
-                <p>
-                    ترنج رجالي شبابي بتصميم عصري
-                </p>
-
-                <div class="price">
-                    899 EGP
-                </div>
-
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Trendy%20Tracksuit"
-                    target="_blank">
-
-                    اطلب الآن
-
-                </a>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- PRODUCT 2 -->
+        <button
+            class="filter-btn"
+            data-category="tracksuits">
 
-        <div class="product">
+            TRACKSUITS
 
-            <div class="product-image">
-                صورة السويت بانتس
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Premium Sweat Pants
-                </h3>
-
-                <p>
-                    سويت بانتس رجالي بخامة عالية الجودة
-                </p>
-
-                <div class="price">
-                    499 EGP
-                </div>
-
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Premium%20Sweat%20Pants"
-                    target="_blank">
-
-                    اطلب الآن
-
-                </a>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- PRODUCT 3 -->
+        <button
+            class="filter-btn"
+            data-category="sweatpants">
 
-        <div class="product">
+            SWEAT PANTS
 
-            <div class="product-image">
-                صورة السويت
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Sweat Set
-                </h3>
-
-                <p>
-                    سويت شيرت مع سويت بانتس
-                </p>
-
-                <div class="price">
-                    799 EGP
-                </div>
-
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Sweat%20Set"
-                    target="_blank">
-
-                    اطلب الآن
-
-                </a>
-
-            </div>
-
-        </div>
+        </button>
 
 
-        <!-- PRODUCT 4 -->
+        <button
+            class="filter-btn"
+            data-category="sets">
 
-        <div class="product">
+            SWEAT SETS
 
-            <div class="product-image">
-                صورة التيشيرت
-            </div>
-
-            <div class="product-info">
-
-                <h3>
-                    Oversized T-Shirt
-                </h3>
-
-                <p>
-                    تيشيرت رجالي Oversized ستايل شبابي
-                </p>
-
-                <div class="price">
-                    499 EGP
-                </div>
-
-                <a
-                    class="order-btn"
-                    href="https://wa.me/201096588861?text=عايز%20اطلب%20Oversized%20T-Shirt"
-                    target="_blank">
-
-                    اطلب الآن
-
-                </a>
-
-            </div>
-
-        </div>
+        </button>
 
     </div>
+
+
+
+    <!-- PRODUCTS WILL APPEAR HERE -->
+
+    <div
+        class="products"
+        id="productsContainer">
+
+    </div>
+
 
 </section>
 
 
-<!-- CATEGORIES -->
 
-<section class="section" id="categories">
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section
+    class="section"
+    id="categories">
+
 
     <div class="section-title">
 
         <h2>
-            اختار <span>ستايلك</span>
+
+            اختار
+            <span>
+                ستايلك
+            </span>
+
         </h2>
 
     </div>
 
 
+
     <div class="categories">
 
-        <div class="category">
+
+        <div
+            class="category"
+            onclick="filterProducts('tshirts')">
+
             T-SHIRTS
+
         </div>
 
-        <div class="category">
+
+        <div
+            class="category"
+            onclick="filterProducts('tracksuits')">
+
             TRACKSUITS
+
         </div>
 
-        <div class="category">
+
+        <div
+            class="category"
+            onclick="filterProducts('sweatpants')">
+
             SWEAT PANTS
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ABOUT -->
 
-<section class="section about" id="about">
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="section about"
+    id="about">
+
 
     <div class="section-title">
 
         <h2>
-            ABOUT <span>X-MEN</span>
+
+            ABOUT
+            <span>
+                X-MEN
+            </span>
+
         </h2>
 
     </div>
@@ -691,20 +1265,30 @@
 
         <p>
 
-            <strong>X-MEN</strong>
-            هي علامة ملابس رجالي بطابع شبابي
-            وستايل جريء.
+            <strong>
+                X-MEN
+            </strong>
+
+            هي علامة ملابس رجالي
+            بطابع شبابي وستايل جريء.
 
             <br>
 
             بنجمع بين
-            <strong>الأسود والأبيض والأصفر</strong>
+
+            <strong>
+                الأسود والأبيض والأصفر
+            </strong>
+
             عشان نقدم Look مختلف ومميز.
 
             <br>
 
             لبسك مش مجرد لبس...
-            <strong>ده ستايلك.</strong>
+
+            <strong>
+                ده ستايلك.
+            </strong>
 
         </p>
 
@@ -713,17 +1297,29 @@
 </section>
 
 
-<!-- FACEBOOK -->
 
-<section class="facebook-section">
+<!-- =========================
+     FACEBOOK
+========================= -->
+
+<section
+    class="facebook-section">
+
 
     <h2>
+
         تابع X-MEN على Facebook
+
     </h2>
 
+
     <p>
-        تابع أحدث المنتجات والعروض والتحديثات
+
+        تابع أحدث المنتجات
+        والعروض والتحديثات
+
     </p>
+
 
     <a
         class="facebook-btn"
@@ -737,17 +1333,30 @@
 </section>
 
 
-<!-- CONTACT -->
 
-<section class="contact" id="contact">
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+    class="contact"
+    id="contact">
+
 
     <h2>
+
         READY TO SHOP?
+
     </h2>
 
+
     <p>
-        اطلب منتجاتك دلوقتي عن طريق WhatsApp
+
+        اطلب منتجاتك دلوقتي
+        عن طريق WhatsApp
+
     </p>
+
 
     <a
         class="contact-btn"
@@ -761,18 +1370,559 @@
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
     <p>
+
         © 2026
-        <strong>X-MEN</strong>
-        — Men's Fashion
+
+        <strong>
+            X-MEN
+        </strong>
+
+        —
+        Men's Fashion
+
     </p>
 
 </footer>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+/* =========================================
+   PRODUCTS DATABASE
+
+   هنا تضيف المنتجات الجديدة
+========================================= */
+
+
+const products = [
+
+
+
+    /* =========================
+       TRACKSUITS
+    ========================= */
+
+
+    {
+
+        name:
+            "Trendy Tracksuit",
+
+        description:
+            "ترنج رجالي شبابي بتصميم عصري",
+
+        price:
+            899,
+
+        image:
+            "product1.jpg",
+
+        category:
+            "tracksuits"
+
+    },
+
+
+    {
+
+        name:
+            "Premium Tracksuit",
+
+        description:
+            "ترنج رجالي خامة ممتازة وتصميم مميز",
+
+        price:
+            999,
+
+        image:
+            "tracksuit2.jpg",
+
+        category:
+            "tracksuits"
+
+    },
+
+
+    {
+
+        name:
+            "Classic Tracksuit",
+
+        description:
+            "ترنج كلاسيك مناسب للخروج والتمرين",
+
+        price:
+            849,
+
+        image:
+            "tracksuit3.jpg",
+
+        category:
+            "tracksuits"
+
+    },
+
+
+
+    /* =========================
+       SWEAT PANTS
+    ========================= */
+
+
+    {
+
+        name:
+            "Premium Sweat Pants",
+
+        description:
+            "سويت بانتس رجالي بخامة عالية الجودة",
+
+        price:
+            499,
+
+        image:
+            "product2.jpg",
+
+        category:
+            "sweatpants"
+
+    },
+
+
+    {
+
+        name:
+            "Basic Sweat Pants",
+
+        description:
+            "سويت بانتس عملي ومريح للاستخدام اليومي",
+
+        price:
+            449,
+
+        image:
+            "sweatpants2.jpg",
+
+        category:
+            "sweatpants"
+
+    },
+
+
+    {
+
+        name:
+            "X-MEN Cargo Sweat Pants",
+
+        description:
+            "سويت بانتس كارغو بتصميم شبابي",
+
+        price:
+            599,
+
+        image:
+            "sweatpants3.jpg",
+
+        category:
+            "sweatpants"
+
+    },
+
+
+
+    /* =========================
+       T-SHIRTS
+    ========================= */
+
+
+    {
+
+        name:
+            "Oversized Black T-Shirt",
+
+        description:
+            "تيشيرت Oversized أسود ستايل شبابي",
+
+        price:
+            499,
+
+        image:
+            "tshirt1.jpg",
+
+        category:
+            "tshirts"
+
+    },
+
+
+    {
+
+        name:
+            "Oversized White T-Shirt",
+
+        description:
+            "تيشيرت Oversized أبيض بتصميم X-MEN",
+
+        price:
+            499,
+
+        image:
+            "tshirt2.jpg",
+
+        category:
+            "tshirts"
+
+    },
+
+
+    {
+
+        name:
+            "X-MEN Graphic T-Shirt",
+
+        description:
+            "تيشيرت بطباعة X-MEN وتصميم مميز",
+
+        price:
+            549,
+
+        image:
+            "tshirt3.jpg",
+
+        category:
+            "tshirts"
+
+    },
+
+
+
+    /* =========================
+       SWEAT SETS
+    ========================= */
+
+
+    {
+
+        name:
+            "Sweat Set",
+
+        description:
+            "سويت شيرت مع سويت بانتس",
+
+        price:
+            799,
+
+        image:
+            "product3.jpg",
+
+        category:
+            "sets"
+
+    },
+
+
+    {
+
+        name:
+            "Premium Sweat Set",
+
+        description:
+            "طقم سويت كامل بخامة Premium",
+
+        price:
+            899,
+
+        image:
+            "sweatset2.jpg",
+
+        category:
+            "sets"
+
+    }
+
+];
+
+
+
+/* =========================================
+   PRODUCTS CONTAINER
+========================================= */
+
+
+const productsContainer =
+    document.getElementById(
+        "productsContainer"
+    );
+
+
+
+/* =========================================
+   CATEGORY NAMES
+========================================= */
+
+
+const categoryNames = {
+
+    tshirts:
+        "T-SHIRTS",
+
+    tracksuits:
+        "TRACKSUITS",
+
+    sweatpants:
+        "SWEAT PANTS",
+
+    sets:
+        "SWEAT SETS"
+
+};
+
+
+
+/* =========================================
+   DISPLAY PRODUCTS
+========================================= */
+
+
+function displayProducts(
+    category = "all"
+) {
+
+
+    productsContainer.innerHTML = "";
+
+
+
+    let filteredProducts;
+
+
+
+    if (category === "all") {
+
+        filteredProducts =
+            products;
+
+    }
+
+    else {
+
+        filteredProducts =
+            products.filter(
+                product =>
+                    product.category === category
+            );
+
+    }
+
+
+
+    filteredProducts.forEach(
+        product => {
+
+
+            const message =
+                `عايز اطلب ${product.name} بسعر ${product.price} EGP`;
+
+
+
+            const card =
+                document.createElement("div");
+
+
+
+            card.className =
+                "product";
+
+
+
+            card.innerHTML = `
+
+                <div class="product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        onerror="
+                            this.onerror=null;
+                            this.src='https://via.placeholder.com/600x600/111111/ffc400?text=X-MEN';
+                        "
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <span class="product-category">
+
+                        ${categoryNames[product.category]}
+
+                    </span>
+
+
+                    <h3>
+
+                        ${product.name}
+
+                    </h3>
+
+
+                    <p>
+
+                        ${product.description}
+
+                    </p>
+
+
+                    <div class="price">
+
+                        ${product.price} EGP
+
+                    </div>
+
+
+                    <a
+                        class="order-btn"
+                        href="https://wa.me/201096588861?text=${encodeURIComponent(message)}"
+                        target="_blank">
+
+                        اطلب الآن
+
+                    </a>
+
+                </div>
+
+            `;
+
+
+
+            productsContainer.appendChild(
+                card
+            );
+
+
+        }
+    );
+
+}
+
+
+
+/* =========================================
+   FILTER PRODUCTS
+========================================= */
+
+
+function filterProducts(
+    category
+) {
+
+
+    displayProducts(
+        category
+    );
+
+
+
+    document
+        .querySelectorAll(".filter-btn")
+        .forEach(
+            button => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+
+
+                if (
+                    button.dataset.category ===
+                    category
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
+
+            }
+        );
+
+
+
+    document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+
+/* =========================================
+   FILTER BUTTON EVENTS
+========================================= */
+
+
+document
+    .querySelectorAll(".filter-btn")
+    .forEach(
+        button => {
+
+
+            button.addEventListener(
+                "click",
+                function() {
+
+
+                    const category =
+                        this.dataset.category;
+
+
+
+                    filterProducts(
+                        category
+                    );
+
+
+                }
+            );
+
+
+        }
+    );
+
+
+
+/* =========================================
+   LOAD ALL PRODUCTS
+========================================= */
+
+
+displayProducts(
+    "all"
+);
+
+
+</script>
+
+
 </body>
+
 </html>
